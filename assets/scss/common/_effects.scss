@@ -1,0 +1,49 @@
+// FLOATING
+@include keyframes(floating1) {
+    0%, 100% {
+        transform: translateX(0) translateY(0) translateZ(0) rotate(0) scale(1);
+    }25% {
+        transform: translateX(0) translateY(30px) translateZ(-10px) rotate(20deg) scale(0.95);
+    }75% {
+        transform: translateX(0) translateY(-30px) translateZ(10px) rotate(-5deg) scale(1);
+    }
+}
+
+.floating1 {
+    animation: floating1 10s linear infinite;
+}
+
+@include keyframes(floating2) {
+    0%, 100% {
+        transform: translateX(0) translateY(0) translateZ(0) rotate(0) scale(1);
+    }25% {
+        transform: translateX(0) translateY(30px) translateZ(-10px) scale(0.95);
+    }75% {
+        transform: translateX(0) translateY(-30px) translateZ(10px) scale(1);
+    }
+}
+
+.floating2 {
+    animation: floating2 10s linear infinite;
+}
+
+@include keyframes(floating) {
+    from { 
+        transform: translateX(calc(-1 * (--pxl-translate-x))) translateY(calc(-1 * (--pxl-translate-y))) scale(1); 
+    } to {
+        transform: translateX(var(--pxl-translate-x)) translateY(var(--pxl-translate-y)) scale(1.05); 
+    }
+}
+
+.floating {
+    animation: floating 10s linear infinite;
+    &.x {
+        --pxl-translate-x: 30px;
+        --pxl-translate-y: 0;
+    }
+    &.y {
+        --pxl-translate-x: 0;
+        --pxl-translate-y: 30px;
+    }
+}
+
