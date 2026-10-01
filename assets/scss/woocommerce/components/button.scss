@@ -1,0 +1,111 @@
+.pxl-button, button {
+    &.button--shop-action {
+        font-size: 0;
+        padding: 0;
+        position: relative;
+        font-size: 0;
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: #FFF;
+        @include box-shadow(0 2px 10px 0 rgba(181, 181, 181, 0.25));
+        color: #000000;
+        > i {
+            display: inline-flex;
+        }
+        &::before {
+            display: inline-flex;
+            font-size: 16px !important;
+            font-family: 'Flaticon';
+            @include absolute-center;
+            line-height: 1;
+            margin: 0;
+        }
+        &:hover {
+            background-color: #fd5900;
+            color: #FFF;
+            border-color: currentColor;
+        }
+        &.button--cart {
+            &::before {
+                content: "\f101";
+            }
+            &::after {
+                display: none;
+            }
+        }
+        &.button--wishlist {
+            &::before {
+                content: "\f102";
+            }
+            &.woosw-added {
+                background-color: #000;
+                color: #FFF;
+            }
+        }
+        &.button--compare {
+            font-size: 16px;
+            &.added {
+                background-color: #000;
+                color: #FFF;
+            }
+        }
+        &.button--quickview {
+            font-size: 16px;
+        }
+    }
+    &.button--buy-now {
+        --pxl-background-color: #1F1F1F;
+        overflow: hidden;
+        @include flex-center;
+        width: 100%;
+        float: none;
+        height: 52px;
+        background-color: #FFF;
+        border: thin solid #1F1F1F;
+        border-radius: 6px;
+        color: #1F1F1F;
+        font-family: var(--font-primary);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5;
+        text-transform: uppercase;
+        padding: 0 32px;
+        opacity: 1 !important;
+        .button__blobs { 
+            z-index: -1;
+        }
+        &.disabled {
+            background-color: #afafaf;
+            border-color: #afafaf;
+            color: #FFF;
+            cursor: not-allowed;
+            .button__blobs {
+                display: none;
+            }
+        }
+        &:hover:not(.disabled) {
+            color: #FFF;
+        }
+    }
+}
+
+.woosw-items .woosw-item .woosw-item--remove  {
+    .button__icon {
+        width: 100%;
+        height: 100%;
+        @include flex-center;
+        &::before {
+            display: none;
+        }
+    }
+    .icon-close {
+        pointer-events: none;
+        width: 10px;
+        &::before, &::after {
+            content: '' !important;
+        }
+    }
+}

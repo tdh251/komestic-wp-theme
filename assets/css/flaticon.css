@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/flaticon/flaticon_komestic.eot");
+  src: url("../fonts/flaticon/flaticon_komestic.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/flaticon/flaticon_komestic.woff2") format("woff2"),
+       url("../fonts/flaticon/flaticon_komestic.woff") format("woff"),
+       url("../fonts/flaticon/flaticon_komestic.ttf") format("truetype"),
+       url("../fonts/flaticon/flaticon_komestic.svg#flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before {
+    font-family:  "Flaticon" !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-bag:before {
+    content: "\f101";
+}
+.flaticon-heart:before {
+    content: "\f102";
+}
+.flaticon-compare:before {
+    content: "\f103";
+}
+.flaticon-loupe:before {
+    content: "\f104";
+}
+.flaticon-close:before {
+    content: "\f105";
+}
+.flaticon-eye:before {
+    content: "\f106";
+}
+.flaticon-chevron-left:before {
+    content: "\f107";
+}
+.flaticon-chevron-right:before {
+    content: "\f108";
+}
+.flaticon-chevron-down:before {
+    content: "\f109";
+}
+
+

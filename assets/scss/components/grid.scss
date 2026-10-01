@@ -1,0 +1,107 @@
+.grid {
+    position: relative;
+    &__masonry {
+        position: relative;
+    }
+    &__inner {
+        --pxl-width: 33.333333%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-inline: calc(-1 * (var(--pxl-spacing-inline) / 2));
+        row-gap: var(--pxl-spacing-block);
+    }
+    &__item {
+        flex: 0 1 calc(var(--pxl-width));
+        max-width: calc(var(--pxl-width));
+        padding-inline: calc(var(--pxl-spacing-inline) / 2);        
+    }
+    &__sizer {
+        z-index: -1;
+        pointer-events: none;
+    }
+}
+
+.pagination, .woocommerce-pagination {
+    width: 100%;
+    margin-top: 100px;
+    @media #{$max-sm} {
+        margin-top: 85px;
+    }
+    &__inner {
+        @include flex-center;
+        gap: 12px;
+        flex-wrap: wrap;
+        .page-numbers {
+            position: relative;
+            --pxl-box-size: 46px;
+            @include round-box;
+            @include flex-center;
+            color: #252525;
+            background-color: #FFF;
+            font-weight: 600;
+            line-height: 1;
+            transition: all .3s linear;
+            border: thin solid #EBEBEB;
+            text-transform: uppercase;
+            border-radius: 4px;
+            &.next, &.prev {
+                min-width: 100px;
+            }
+            &.current, &.dots {
+                cursor: not-allowed;
+            }
+            &:hover, &.current {
+                color: #FFF;
+                background-color: #252525;
+                border-color: #252525
+            }
+        }
+    }
+}
+
+.woocommerce-pagination {
+    margin-top: 80px;
+    &__inner {
+        .page-numbers {
+            &.prev {
+                svg {
+                    transform: scaleX(-1);
+                }
+            }
+            &.next, &.prev {
+                min-width: auto;
+            }
+        }
+    }
+}
+
+.load-more {
+    margin-top: 100px;
+    @media #{$max-sm} {
+        margin-top: 85px;
+    }
+    &__inner {
+        display: flex;
+        justify-content: center;
+    }
+    &__button {
+        &.button {
+            --pxl-background-color: #252525;
+            height: 46px;
+            color: #252525;
+            font-family: "Open Sans";
+            text-transform: capitalize;
+            padding-inline: 32px;
+            border-radius: 4px;
+            border: thin solid #EBEBEB;
+            background-color: #FFF;
+            &:hover {
+                color: #FFF;
+                border-color: #252525;
+            }
+        }
+    }
+}
+
+
+
